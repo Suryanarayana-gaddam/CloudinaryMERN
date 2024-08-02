@@ -14,7 +14,7 @@ const DisplayDetails = () => {
     setTimeout(() =>{
       setDetails(data);
       setIsLoading(false);
-    },4000)
+    },1000)
 
   },[url])
 
