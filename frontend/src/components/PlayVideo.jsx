@@ -5,7 +5,6 @@ import { Link, useLoaderData } from 'react-router-dom'
 
 const PlayVideo = () => {
   const { videoId } = useLoaderData();
-  console.log("VId:",videoId)
   const Version = String(videoId.slice(String(videoId).lastIndexOf("*")+1))
   const VideoId = String(videoId.slice(0,String(videoId).lastIndexOf("*")))
   const videoUrl = `https://res.cloudinary.com/dh4kugkxx/video/upload/v${Version}/NeonFlakeTask/Videos/${VideoId}.mp4`;

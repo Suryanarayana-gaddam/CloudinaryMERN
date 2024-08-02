@@ -9,7 +9,7 @@ const DisplayDetails = () => {
   const [isLoading,setIsLoading] = useState(false);
   const [videoId,setVideoId] = useState(null);
   useEffect(() => {
-    setUrl("http://localhost:5030/getDetails");
+    setUrl("https://cloudinarymernapi.onrender.com/getDetails");
     setIsLoading(true);
     setTimeout(() =>{
       setDetails(data);
@@ -28,7 +28,6 @@ const DisplayDetails = () => {
 </div>
   }
 
-  console.log("Data :",data);
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-2'>
       {data && data.map((item,index) => (

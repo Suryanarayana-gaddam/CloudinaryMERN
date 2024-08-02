@@ -9,10 +9,8 @@ const Upload = () => {
     const handlePicCollect = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        console.log("e.target.value:",e.target.value)
         var reader = new FileReader();
         reader.onloadend = function () {
-            console.log(reader.result)
             setImg(reader.result);
         }
         reader.readAsDataURL(e.target.files[0])
@@ -22,10 +20,8 @@ const Upload = () => {
     const handleVideoCollect = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        console.log("e.target.value:",e.target.value)
         var reader = new FileReader();
         reader.onloadend = function () {
-            console.log(reader.result)
             setVideo(reader.result);
         }
         reader.readAsDataURL(e.target.files[0])
@@ -60,8 +56,7 @@ const Upload = () => {
             image : img,
             video : video
         }
-        console.log("Data :",data);
-        fetch("http://localhost:5030/upload",{
+        fetch("https://cloudinarymernapi.onrender.com/upload",{
             method: "POST",
             headers : {
                 "Content-Type" : "application/json",
@@ -73,7 +68,6 @@ const Upload = () => {
             setIsLoading(false);
             setImg("");
             alert(res.message)
-            console.log("Res Data : ",res.data)
         }).catch(error =>{
             setIsLoading(false);
             console.log(error.message)
